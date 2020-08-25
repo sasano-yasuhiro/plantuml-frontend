@@ -10,6 +10,10 @@ module.exports = {
   watchOptions: {
     ignored: /node_modules/
   },
+  devServer: {
+    contentBase: __dirname + '/public',
+    port: 8000,
+  },
   module: {
     rules: [
       {
