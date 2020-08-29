@@ -4,7 +4,7 @@
   "description": "plantumlのフロントエンド",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --silent",
     "build": "webpack --mode production ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
