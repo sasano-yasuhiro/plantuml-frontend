@@ -1,0 +1,3 @@
+inflate.js, deflate.js
+http://www33146ue.sakura.ne.jp/staff/iz/amuse/javascript/expert/
+
