@@ -1,0 +1,52 @@
+{
+  "name": "plantuml-frontend",
+  "version": "1.0.0",
+  "description": "plantumlのフロントエンド",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve -open --mode development",
+    "build": "webpack --mode production ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasano-yasuhiro/plantuml-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": [
+            "defaults"
+          ]
+        }
+      ]
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/sasano-yasuhiro/plantuml-frontend/issues"
+  },
+  "homepage": "https://github.com/sasano-yasuhiro/plantuml-frontend#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.6",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.42.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
