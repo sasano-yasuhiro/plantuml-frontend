@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import PlantUmlEditor from './views/plantUmlEditor'
 
-console.log('Hello World!!!!');
-
-let element = <div>deploied amplify!</div>
+let element = <PlantUmlEditor/>
 ReactDOM.render(
   element,
   document.getElementById('app')
