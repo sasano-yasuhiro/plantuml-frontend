@@ -1,0 +1,3 @@
+[submodule "src/views/common"]
+	path = src/views/common
+	url = https://github.com/sasano-yasuhiro/react_components.git
