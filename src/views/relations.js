@@ -13,7 +13,6 @@ export default class Relations extends React.Component{
       components: [],
       relations: [],
     }
-    this.text = ''
   }
   componentDidMount(){
     this.setState((state)=>{
@@ -22,23 +21,20 @@ export default class Relations extends React.Component{
         dest: this.props.dest,
         relation: this.props.relation,
         components: this.props.components,
-        relations: this.props.relations,
       }
     })
   }
-  onSelect(e){
+  onChange(e){
     let {id, value} = e.target
-    let state = {
-      src: this.state.src,
-      dest: this.state.dest,
-      relation: this.state.relation,
-    }
-    state[id]=value
-    this.setState(state)
-    let text=state.src+" "+state.relation+" "+state.dest
+    let text = this.changeRelation(id, value)
     if(this.props.onChange){
       this.props.onChange(text)
     }
+  }
+  // absolute method
+  changeRelation(id, value){
+    console.assert("not implement method")
+    return ""
   }
   render(){
     return(
@@ -46,19 +42,19 @@ export default class Relations extends React.Component{
         <SelectBox
           id={"src"}
           value={this.state.src}
-          onChange={this.onSelect.bind(this)}
+          onChange={this.onChange.bind(this)}
           items={this.state.components}
         />
         <SelectBox
           id={"relation"}
           value={this.state.relation}
-          onChange={this.onSelect.bind(this)}
+          onChange={this.onChange.bind(this)}
           items={this.state.relations}
         />
         <SelectBox
           id={"dest"}
           value={this.state.dest}
-          onChange={this.onSelect.bind(this)}
+          onChange={this.onChange.bind(this)}
           items={this.state.components}
         />
       </div>

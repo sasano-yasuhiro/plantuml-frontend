@@ -68,8 +68,8 @@ export default class plantUmlEditor extends React.Component{
             src={'Bob'}
             dest={'Alice'}
             relation={'->'}
+            message={'hello'}
             components={['Bob', 'Alice']}
-            relations={['->', '-|>']}
             onChange={this.onChangeRelation.bind(this)}
           />
         </Tabs>
