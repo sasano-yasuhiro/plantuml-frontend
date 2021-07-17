@@ -44,6 +44,10 @@ export default class plantUmlEditor extends React.Component{
         text += "!define AWSPUML https://raw.githubusercontent.com/milo-minderbinder/AWS-PlantUML/release/18-2-22/dist\n"
         text += "!includeurl AWSPUML/common.puml\n"
         break;
+      case 'AWS-icons':
+        text += "!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v10.0/dist\n"
+        text += "!includeurl AWSPuml/AWSCommon.puml!includeurl AWSPuml/AWSCommon.puml\n"
+        break;
       default:
         console.log(e.target.value)
     }
@@ -74,10 +78,10 @@ export default class plantUmlEditor extends React.Component{
     const server = "http://54.238.21.224:8080/plantuml/"
     const image_type = "svg"
     const url = server + image_type + "/" + this.state.code;
-    const full_text = this.state.header + this.state.text + this.state.footer
+    const full_text = this.state.header + this.state.lib_header + this.state.text + this.state.footer
     return(
       <div>
-        <SelectBox items={['UML', 'AWS']} onChange={this.onSelect.bind(this)} />
+        <SelectBox items={['UML', 'AWS', 'AWS-icons']} onChange={this.onSelect.bind(this)} />
         {/*<Button label='refresh'/>*/}
         <img src={url}/>
         {/*<CheckBox label={'read only'} onChange={this.toggleCheck.bind(this)}/>*/}
