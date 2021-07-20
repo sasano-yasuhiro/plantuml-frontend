@@ -1,3 +1,4 @@
+export const awsIcons = 
 [{"type":"directory","name": ".","contents":[
     {"type":"directory","name":"AI","contents":[
       {"type":"directory","name":"AmazonLex","contents":[
