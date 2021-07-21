@@ -3,9 +3,10 @@ import compress from '../utils/encoder/encoder'
 import CheckBox from './common/checkbox'
 import TextArea from './common/textarea'
 import Button from './common/button'
-import Tabs from './common/tabs'
+import {Tabs, TabHeader, TabPanel} from './common/tabs'
 import SelectBox from './common/list'
 import UmlSequence from './UmlSequence'
+import Components from './components'
 
 import './plantumleditor.scss'
 
@@ -35,7 +36,7 @@ export default class plantUmlEditor extends React.Component{
   }
   onSelect(e){
     let text = ""
-    switch(e.target.value){
+    switch(e.target.id){
       case 'UML':
         break;
       case 'AWS':
@@ -49,7 +50,7 @@ export default class plantUmlEditor extends React.Component{
         text += "!includeurl AWSPuml/AWSCommon.puml!includeurl AWSPuml/AWSCommon.puml\n"
         break;
       default:
-        console.log(e.target.value)
+        console.log(e.target.id)
     }
     this.setState({lib_header: text})
   }
@@ -81,7 +82,7 @@ export default class plantUmlEditor extends React.Component{
     const full_text = this.state.header + this.state.lib_header + this.state.text + this.state.footer
     return(
       <div>
-        <SelectBox items={['UML', 'AWS', 'AWS-icons']} onChange={this.onSelect.bind(this)} />
+        <Components items={['UML', 'AWS', 'AWS-icons']} onChange={this.onSelect.bind(this)}/>
         {/*<Button label='refresh'/>*/}
         <img src={url}/>
         {/*<CheckBox label={'read only'} onChange={this.toggleCheck.bind(this)}/>*/}
