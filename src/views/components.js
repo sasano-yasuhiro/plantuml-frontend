@@ -1,6 +1,5 @@
 import React from 'react';
 import {Tabs, TabHeader, TabPanel} from './common/tabs'
-import SelectBox from './common/list'
 import UmlComponents from './UmlComponent'
 import AwsComponents from './AwsComponent'
 
@@ -17,7 +16,6 @@ export default class Components extends React.Component{
     let items=this.props.items
     return(
       <Tabs onChange={this.props.onChange}>
-        <SelectBox items={items} onChange={this.props.onChange} />
         <TabHeader>
           {items.map(item =>{
             return <div key={key++} id={item}>{item}</div>
