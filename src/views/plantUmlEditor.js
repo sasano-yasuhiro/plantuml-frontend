@@ -70,11 +70,6 @@ export default class plantUmlEditor extends React.Component{
       }
     })
   }
-  toggleCheck(){
-    this.setState(()=>{
-      return({isChecked: !this.state.isChecked})
-    })
-  }
   render(){
     const server = "http://54.238.21.224:8080/plantuml/"
     const image_type = "svg"
@@ -83,21 +78,17 @@ export default class plantUmlEditor extends React.Component{
     return(
       <div>
         <Components items={['UML', 'AWS', 'AWS-icons']} onChange={this.onSelect.bind(this)}/>
-        {/*<Button label='refresh'/>*/}
         <img src={url}/>
-        {/*<CheckBox label={'read only'} onChange={this.toggleCheck.bind(this)}/>*/}
-        <Tabs>
-          <TextArea className={'fulltext'} value={full_text} onChange={()=>{}}/>
-          <TextArea value={this.state.text} onChange={this.onTextChange.bind(this)}/>
-          <UmlSequence
-            src={'Bob'}
-            dest={'Alice'}
-            relation={'->'}
-            message={'hello'}
-            components={['Bob', 'Alice']}
-            onChange={this.onChangeRelation.bind(this)}
-          />
-        </Tabs>
+        <TextArea className={'fulltext'} value={full_text} onChange={()=>{}}/>
+        <TextArea value={this.state.text} onChange={this.onTextChange.bind(this)}/>
+        <UmlSequence
+          src={'Bob'}
+          dest={'Alice'}
+          relation={'->'}
+          message={'hello'}
+          components={['Bob', 'Alice']}
+          onChange={this.onChangeRelation.bind(this)}
+        />
       </div>
     )
   }

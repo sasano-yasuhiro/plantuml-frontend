@@ -14,12 +14,11 @@ export default class Components extends React.Component{
   render(){
     let key=0
     let items=this.props.items
+
     return(
-      <Tabs onChange={this.props.onChange}>
+      <Tabs onChange={this.props.onChange} isVertical={true}>
         <TabHeader>
-          {items.map(item =>{
-            return <div key={key++} id={item}>{item}</div>
-          })}
+          {items}
         </TabHeader>
         <TabPanel id={items[0]}>
           <UmlComponents/>
