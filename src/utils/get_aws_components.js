@@ -10,9 +10,9 @@ function get_icon_files(contents){
   contents.map((obj)=>{
     if(obj.type == "directory"){
       if(!(obj.name in components)){
-        components[obj.name]=[]
+        components[obj.name]={}
       }
-      components[obj.name].push(get_icon_files(obj.contents))
+      components[obj.name] = get_icon_files(obj.contents)
     }else if(obj.type == "file"){
       if(!("file" in components)){
         components["file"]=[]
