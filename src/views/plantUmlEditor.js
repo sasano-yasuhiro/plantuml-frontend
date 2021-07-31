@@ -76,9 +76,16 @@ export default class plantUmlEditor extends React.Component{
     const url = server + image_type + "/" + this.state.code;
     const full_text = this.state.header + this.state.lib_header + this.state.text + this.state.footer
     return(
-      <div>
-        <Components items={['UML', 'AWS', 'AWS-icons']} onChange={this.onSelect.bind(this)}/>
-        <img src={url}/>
+      <div className={'plantumleditor'}>
+        <Components
+          className={'components'}
+          items={['UML', 'AWS', 'AWS-icons']}
+          onChange={this.onSelect.bind(this)}
+        />
+        <img
+          className={'image'}
+          src={url}
+        />
         <TextArea className={'fulltext'} value={full_text} onChange={()=>{}}/>
         <TextArea value={this.state.text} onChange={this.onTextChange.bind(this)}/>
         <UmlSequence

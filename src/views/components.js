@@ -14,9 +14,9 @@ export default class Components extends React.Component{
   render(){
     let key=0
     let items=this.props.items
-
+    let className = this.props.className?this.props.className + " ":""
     return(
-      <Tabs onChange={this.props.onChange} isVertical={true}>
+      <Tabs className={className} onChange={this.props.onChange} isVertical={true}>
         <TabHeader>
           {items}
         </TabHeader>
