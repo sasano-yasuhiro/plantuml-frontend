@@ -40,8 +40,6 @@ export default class plantUmlEditor extends React.Component{
       case 'UML':
         break;
       case 'AWS':
-        //その内、EC2内の参照にしたい
-        //text += "!define AWSPUML /home/ec2-user/AWS-PlantUML\n"
         text += "!define AWSPUML https://raw.githubusercontent.com/milo-minderbinder/AWS-PlantUML/release/18-2-22/dist\n"
         text += "!includeurl AWSPUML/common.puml\n"
         break;
@@ -87,8 +85,17 @@ export default class plantUmlEditor extends React.Component{
           src={url}
         />
         <div>
-          <TextArea className={'fulltext'} value={full_text} onChange={()=>{}}/>
-          <TextArea value={this.state.text} onChange={this.onTextChange.bind(this)}/>
+          <Tabs>
+            <TabHeader>
+              {['text','fulltext']}
+            </TabHeader>
+            <TabPanel id={'text'}>
+              <TextArea value={this.state.text} onChange={this.onTextChange.bind(this)}/>
+            </TabPanel>
+            <TabPanel id={'fulltext'}>
+              <TextArea className={'fulltext'} value={full_text} onChange={()=>{}}/>
+            </TabPanel>
+          </Tabs>
           <UmlSequence
             src={'Bob'}
             dest={'Alice'}
