@@ -44,8 +44,8 @@ export default class plantUmlEditor extends React.Component{
         text += "!includeurl AWSPUML/common.puml\n"
         break;
       case 'AWS-icons':
-        text += "!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v10.0/dist\n"
-        text += "!includeurl AWSPuml/AWSCommon.puml!includeurl AWSPuml/AWSCommon.puml\n"
+        text += "!define AWSPUML https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v10.0/dist\n"
+        text += "!includeurl AWSPUML/AWSCommon.puml\n"
         break;
       default:
         console.log(e.target.id)
