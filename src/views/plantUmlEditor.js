@@ -86,16 +86,18 @@ export default class plantUmlEditor extends React.Component{
           className={'image'}
           src={url}
         />
-        <TextArea className={'fulltext'} value={full_text} onChange={()=>{}}/>
-        <TextArea value={this.state.text} onChange={this.onTextChange.bind(this)}/>
-        <UmlSequence
-          src={'Bob'}
-          dest={'Alice'}
-          relation={'->'}
-          message={'hello'}
-          components={['Bob', 'Alice']}
-          onChange={this.onChangeRelation.bind(this)}
-        />
+        <div>
+          <TextArea className={'fulltext'} value={full_text} onChange={()=>{}}/>
+          <TextArea value={this.state.text} onChange={this.onTextChange.bind(this)}/>
+          <UmlSequence
+            src={'Bob'}
+            dest={'Alice'}
+            relation={'->'}
+            message={'hello'}
+            components={['Bob', 'Alice']}
+            onChange={this.onChangeRelation.bind(this)}
+          />
+        </div>
       </div>
     )
   }

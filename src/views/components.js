@@ -16,20 +16,22 @@ export default class Components extends React.Component{
     let items=this.props.items
     let className = this.props.className?this.props.className + " ":""
     return(
-      <Tabs className={className} onChange={this.props.onChange} isVertical={true}>
-        <TabHeader>
-          {items}
-        </TabHeader>
-        <TabPanel id={items[0]}>
-          <UmlComponents/>
-        </TabPanel>
-        <TabPanel id={items[1]}>
-          <AwsComponents/>
-        </TabPanel>
-        <TabPanel id={items[2]}>
-          <AwsComponents/>
-        </TabPanel>
-      </Tabs>
+      <div className={className}>
+        <Tabs onChange={this.props.onChange} isVertical={true}>
+          <TabHeader>
+            {items}
+          </TabHeader>
+          <TabPanel id={items[0]}>
+            <UmlComponents/>
+          </TabPanel>
+          <TabPanel id={items[1]}>
+            <AwsComponents/>
+          </TabPanel>
+          <TabPanel id={items[2]}>
+            <AwsComponents/>
+          </TabPanel>
+        </Tabs>
+      </div>
     )
   }
 }

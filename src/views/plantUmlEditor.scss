@@ -1,9 +1,8 @@
 .plantumleditor{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   .components{
-    align-self: flex-start;
   }
   .image{
-    align-self: flex-start;
   }
 }
